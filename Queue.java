@@ -1,21 +1,21 @@
-class Queue {
+class Queue<T>{
 	
-	Node first = null;
-	Node last = null;
+	Node<T> first = null;
+	Node<T> last = null;
 
-	void enqueue(int val){
+	void enqueue(T val){
 		Node item = new Node(val);
 		if(first == null){
 			first = item;
 			last = item;
 		} else {
 			last.link = item;
-			last = last->link;
+			last = last.link;
 		}
 	}
 	
-	Node dequeue(){
-		Node temp;
+	Node<T> dequeue(){
+		Node<T> temp;
 		if(first == null){
 			System.out.println("Queue Empty");
 			return null;
@@ -33,32 +33,35 @@ class Queue {
 	}
 
 	void display(){
-		Node travel = first;
+		Node<T> travel = first;
 
 		System.out.println("Queue");
 		
 		while(travel !=null){
 			System.out.print(travel.data+"-->");
+			travel = travel.link;
 		}
 		System.out.println();
 	}
 
-	class Node {
-		int data;
+	class Node<T> {
+		T data;
 		Node link;
-		Node(int val){
+		Node(T val){
 			this.data=val;
 			link = null;
 		}
 	}
 
 	public static void main(String args[]){
-		Queue aqueue = new Queue();
-		aqueue.enqueue(1);
+		Queue<String> aqueue = new Queue<String>();
+		aqueue.enqueue("100");
 		aqueue.display();
-		aqueue.enqueue(2);
+		aqueue.enqueue("212");
 		aqueue.display();
-		aqueue.enqueue(3);
+		aqueue.enqueue("313");
+		aqueue.display();
+		aqueue.dequeue();
 		aqueue.display();
 		aqueue.dequeue();
 		aqueue.display();
@@ -67,5 +70,4 @@ class Queue {
 		aqueue.dequeue();
 		aqueue.display();
 	}
-
 }
