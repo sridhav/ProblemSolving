@@ -1,5 +1,9 @@
 class ArrayList<T>{
+<<<<<<< HEAD
 	T arr[] = new T[1];
+=======
+	T arr[] = (T[]) new Object[1];
+>>>>>>> Generic Array added
 	int size = 0;
 	/**
 	 * Appends item at the end of an Array List
@@ -8,7 +12,11 @@ class ArrayList<T>{
 	void add(T item){
 		if(this.size == arr.length){
 			T temp[] = arr;
+<<<<<<< HEAD
 			arr = new T[size];
+=======
+			arr = (T[])new Object[2*size];
+>>>>>>> Generic Array added
 			for(int i=0;i<temp.length;i++){
 				arr[i] = temp[i];
 			}
@@ -34,13 +42,21 @@ class ArrayList<T>{
 			add(item);
 			return;
 		}
+<<<<<<< HEAD
 		if(index > this.size || index<0){
+=======
+		if(index > size || index<0){
+>>>>>>> Generic Array added
 			System.out.println("Invalid Index appending at last");
 			add(item);
 		}
 		if(this.size == arr.length){
 			T temp[] = arr;
+<<<<<<< HEAD
 			arr = new T[2*arr.length];
+=======
+			arr = (T[])new Object[2*arr.length];
+>>>>>>> Generic Array added
 			for(int i=0;i<(temp.length+1);i++){
 				arr[i] = temp[i];
 				if(i==index){
@@ -65,7 +81,11 @@ class ArrayList<T>{
 	 * @return Object that is removed at the index
 	 */
 	T remove(int index){
+<<<<<<< HEAD
 		if(index<0 && index>size){
+=======
+		if(index<0 || index>size){
+>>>>>>> Generic Array added
 			System.out.println("Invalid Index");
 			return null;
 		}
@@ -73,6 +93,10 @@ class ArrayList<T>{
 		for(int i=index;i<this.size-1;i++){
 			arr[i]=arr[i+1];
 		}
+<<<<<<< HEAD
+=======
+		size--;
+>>>>>>> Generic Array added
 		return item;
 	}
 	/**
@@ -91,15 +115,29 @@ class ArrayList<T>{
 		for(int i=0;i<size;i++){
 			System.out.print(arr[i]+"-");
 		}
+<<<<<<< HEAD
+=======
+		System.out.println();
+>>>>>>> Generic Array added
 	}
 
 	public static void main(String args[]){
 		ArrayList<Integer> al =new ArrayList<Integer>();
 		al.add(1);
 		al.add(2);
+<<<<<<< HEAD
 		al.addAt(5,1);
 		System.out.println("GET 1: "+al.get(1));
 		al.remove(1);
 		al.display();
+=======
+
+		al.addAt(5,1);
+		al.display();
+		System.out.println("GET 1: "+al.get(1));
+		al.remove(1);
+		al.display();
+		al.remove(10);
+>>>>>>> Generic Array added
 	}
 }
