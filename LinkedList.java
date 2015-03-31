@@ -15,7 +15,7 @@ class LinkedList<T>{
 			while(travel.link!=null){
 				travel=travel.link;
 			}
-			travel.link = temp;
+			travel.link= temp;
 		}
 		size++;
 	}
@@ -39,14 +39,14 @@ class LinkedList<T>{
 		int count = 0;
 		Node travel = start;
 		while(travel.link!=null){
-			if(count == index -1){
+			if(count == index-1){
 				temp.link = travel.link;
 				travel.link = temp;
 				size++;
 				return;
 			} 
-				travel = travel.link;
-				count++;
+			travel = travel.link;
+			count++;
 		}
 	}
 
@@ -65,9 +65,8 @@ class LinkedList<T>{
 		Node<T> travel = start;
 		while(travel.link != null){
 			if(count == index-1){
-				travel.link = travel.link.link;
+					travel.link = travel.link.link;
 				size--;
-				travel = travel.link;
 				return travel.data;
 			}
 			travel= travel.link;
@@ -87,7 +86,7 @@ class LinkedList<T>{
 		}
 		int count = 0;
 		Node<T> travel = start;
-		while(travel.link != null){
+		while(travel != null){
 			if(count == index){
 				return travel.data;
 			}
@@ -106,7 +105,7 @@ class LinkedList<T>{
 		}
 		System.out.println("Linked List");
 		Node<T> travel = start;
-		while(travel.link!=null){
+		while(travel!=null){
 			System.out.print(travel.data+"->");
 			travel=travel.link;
 		}
